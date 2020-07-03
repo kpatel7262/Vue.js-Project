@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Tic tac toe</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		
+	</head>
+	<body>
+		<div id="game-container">
+			<div id="game-title">
+				Tic Tak Tuc Toe
+			</div>
+			<div id="game-squares">
+				<div 
+					v-for="(square,i) in squares"
+					v-on:click="activeGame.makeMove(i)" 
+					class="single-square">
+					{{ square.value }}
+					<!--on click call moves method on runnning game-->
+					<!--special attribute allows you to make multiple same templete for each element-->
+					<!--squares referes to game.js-->
+					<!--square referes single objective-->
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue" charset="UTF-8"></script>
+		<script type="text/javascript" src="js/square.js"></script>
+		<script type="text/javascript" src="js/game.js"></script>
+		<script type="text/javascript">
+			//global veriable of an instance of game
+			let gameOn = new Game(); 
+
+			/*new object*/
+			let gameVue = new Vue({
+				el:'#game-container',//referes to entire application in html
+				data: gameOn //meaning we are saying that when ever anything changes in here we want Vue to represent those changes in html
+			});
+		</script>
+
+	</body>
+</html>

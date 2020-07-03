@@ -1,0 +1,59 @@
+#game-container{
+    width: 500px;
+    margin: 0 auto;
+    border:1px solid black;
+}
+
+#game-title{
+    padding: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    background-color:lightcoral;
+}
+
+#game-squares{
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 25px;
+    box-sizing: border-box;
+    
+}
+
+.single-square{
+    width: 25%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    font-family: cursive;
+    font-size: 75px;
+    text-transform: capitalize;
+    border-radius: 15px;
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+}
+
+.single-square.highlight{
+    color: green;
+}
+
+.single-square:hover{
+    background-color: gray;
+}
+
+
+/* try to create 12 squares 
+.single-square:nth-child(n){border-bottom: 15px solid brown;}
+.single-square:nth-child(2n){border-right: 15px solid brown;}
+.single-square:nth-child(3n){border-top: 15px solid brown;}
+.single-square:nth-child(n-1){border-left: 15px solid brown;} */
+
+
+.single-square:nth-child(-n+6){border-bottom: 15px solid darkcyan;}
+.single-square:nth-child(3n+1),
+.single-square:nth-child(3n+2){border-right: 15px solid darkcyan;}
